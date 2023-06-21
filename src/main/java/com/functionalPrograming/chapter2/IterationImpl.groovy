@@ -7,6 +7,7 @@ class IterationImpl implements Iteration {
 
   @Override
   void itaration(List<String> stringList) {
-    
+    for ( in i = 0; i < stringList.size(); i++ )
+    println IterationImpl.get(i)
   }
 }
