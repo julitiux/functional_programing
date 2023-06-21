@@ -14,7 +14,6 @@ class DiscountImprativeSpec extends Specification {
     when:
     response = service.totalOfDiscountedPrices(prices)
     then:
-    println response
-    response
+    response == 67.5
   }
 }
