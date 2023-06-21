@@ -12,7 +12,8 @@ public class DiscountImprativeImpl implements DiscountImprative {
   public BigDecimal totalOfDiscountedPrices(List<BigDecimal> prices) {
     BigDecimal dummmy = BigDecimal.ZERO;
     for (BigDecimal price : prices) {
-      dummmy = dummmy.add(price.multiply(BigDecimal.valueOf(0.9)));
+      if (price.compareTo(BigDecimal.valueOf(20)) > 0)
+        dummmy = dummmy.add(price.multiply(BigDecimal.valueOf(0.9)));
     }
     return dummmy;
   }
