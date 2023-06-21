@@ -10,11 +10,9 @@ public class DiscountImprativeImpl implements DiscountImprative {
 
   @Override
   public BigDecimal totalOfDiscountedPrices(List<BigDecimal> prices) {
-    BigDecimal dummmy = BigDecimal.ZERO;
-    for (BigDecimal price : prices) {
-      if (price.compareTo(BigDecimal.valueOf(20)) > 0)
-        dummmy = dummmy.add(price.multiply(BigDecimal.valueOf(0.9)));
-    }
-    return dummmy;
+    return prices.stream()
+      .filter(price -> price.compareTo(BigDecimal.valueOf(20)) > 0)
+      .map(price -> price.multiply(BigDecimal.valueOf(0.9)))
+      .reduce(BigDecimal.ZERO, BigDecimal::add);
   }
 }
