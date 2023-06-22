@@ -9,6 +9,6 @@ class IterationImpl implements Iteration {
 
   @Override
   public void iteration(List<String> stringList) {
-    stringList.forEach((name) -> System.out.println(name));
+    stringList.forEach(name -> System.out.println(name));
   }
 }
