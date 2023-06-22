@@ -10,14 +10,16 @@ class PickElementsSpec extends Specification {
     and:
     List<String> wordList = _wordList
     and:
+    String startWtih = _startWtih
+    and:
     List<String> response
     when:
-    response = service.startsWithXLetter(wordList)
+    response = service.startsWithXLetter(wordList, startWtih)
     then:
     response == _response
     where:
-    _wordList                                          | _response
-    ["Brian", "Nate", "Neal", "Raju", "Sara", "Scott"] | ["Nate", "Neal"]
+    _wordList                                          | _startWtih | _response
+    ["Brian", "Nate", "Neal", "Raju", "Sara", "Scott"] | "N"        | ["Nate", "Neal"]
   }
 
 }
