@@ -9,8 +9,9 @@ public class PickElementsImpl implements PickElements {
   // THIS WAS MY FIRST PREDICATE
   final Predicate<String> firstPredicate = word -> word.startsWith("N");
 
-  final Predicate<String> startWithPredicate(String start) {
-    return it -> it.startsWith(start);
+  // USING LEXICAL SCOPING
+  final Predicate<String> startWithPredicate(final String letter) {
+    return it -> it.startsWith(letter);
   }
 
   @Override
