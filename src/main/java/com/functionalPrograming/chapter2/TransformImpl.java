@@ -1,4 +1,17 @@
 package com.functionalPrograming.chapter2;
 
-public class TransformImpl {
+import java.util.ArrayList;
+import java.util.List;
+
+public class TransformImpl implements Transform {
+
+  @Override
+  public List<String> transformUpperCase(List<String> nameList) {
+    List<String> upperCasesNames = new ArrayList<String>();
+    for (String name : nameList) {
+      upperCasesNames.add(name.toUpperCase());
+    }
+    return upperCasesNames;
+  }
+
 }
