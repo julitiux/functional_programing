@@ -1,15 +1,15 @@
 package com.functionalPrograming.chapter2;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TransformImpl implements Transform {
 
   @Override
   public List<String> transformUpperCase(List<String> nameList) {
-    List<String> upperCasesNames = new ArrayList<String>();
-    nameList.stream().forEach(name -> upperCasesNames.add(name.toUpperCase()));
-    return upperCasesNames;
+    return nameList.stream()
+      .map(name -> name.toUpperCase())
+      .collect(Collectors.toList());
   }
 
 }
