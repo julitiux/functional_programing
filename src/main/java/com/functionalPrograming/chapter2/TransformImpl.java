@@ -8,7 +8,7 @@ public class TransformImpl implements Transform {
   @Override
   public List<String> transformUpperCase(List<String> nameList) {
     return nameList.stream()
-      .map(name -> name.toUpperCase())
+      .map(String::toUpperCase)
       .collect(Collectors.toList());
   }
 
