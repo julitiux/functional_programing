@@ -20,6 +20,9 @@ class PickElementsSpec extends Specification {
     where:
     _wordList                                          | _startWtih | _response
     ["Brian", "Nate", "Neal", "Raju", "Sara", "Scott"] | "N"        | ["Nate", "Neal"]
+    ["Brian", "Jackie", "John", "Mike"]                | "N"        | []
+    ["Kate", "Ken", "Nick", "Paula", "Zach"]           | "N"        | ["Nick"]
+
   }
 
 }
