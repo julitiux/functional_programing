@@ -8,9 +8,7 @@ public class TransformImpl implements Transform {
   @Override
   public List<String> transformUpperCase(List<String> nameList) {
     List<String> upperCasesNames = new ArrayList<String>();
-    for (String name : nameList) {
-      upperCasesNames.add(name.toUpperCase());
-    }
+    nameList.stream().forEach(name -> upperCasesNames.add(name.toUpperCase()));
     return upperCasesNames;
   }
 
