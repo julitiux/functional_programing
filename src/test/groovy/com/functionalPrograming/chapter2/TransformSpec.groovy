@@ -8,14 +8,17 @@ class TransformSpec extends Specification {
     given:
     Transform service = new TransformImpl()
     and:
-    List<String> nameList = ['Juanita', 'Calambrita',' Pedrito']
+    List<String> nameList = _nameList
     and:
     List<String> response
     when:
     response = service.transformUpperCase(nameList)
     then:
-    println response
-    response
+    response == _response
+    where:
+
+    _nameList                             | _response
+    ['Juanita', 'Calambrita', 'Pedrito'] | ['JUANITA', 'CALAMBRITA', 'PEDRITO']
   }
 
 }
