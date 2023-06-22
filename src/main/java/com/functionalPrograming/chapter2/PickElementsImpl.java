@@ -1,18 +1,15 @@
 package com.functionalPrograming.chapter2;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PickElementsImpl implements PickElements {
 
   @Override
-  public List<String> startsWithXLetter(List<String> wordList) {
-    final List<String> startsWithN = new ArrayList<>();
-    for (String word : wordList) {
-      if (word.startsWith("N"))
-        startsWithN.add(word);
-    }
-    return startsWithN;
+  public List<String> startsWithXLetter(List<String> wordList, String startWtih) {
+    return wordList.stream()
+      .filter(word -> word.startsWith(startWtih))
+      .collect(Collectors.toList());
   }
 
 }
