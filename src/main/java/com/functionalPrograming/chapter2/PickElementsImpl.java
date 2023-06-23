@@ -24,4 +24,25 @@ public class PickElementsImpl implements PickElements {
       .collect(Collectors.toList());
   }
 
+  @Override
+  public String pickName(List<String> nameList, String startingLetter) {
+    String foundName = null;
+
+    for (String name : nameList) {
+      if (name.startsWith(startingLetter)) {
+        foundName = name;
+        break;
+      }
+    }
+
+    System.out.println(String.format("A name starting with %s: ", startingLetter));
+
+    if (foundName != null) {
+      return foundName;
+    } else {
+      return "No Name Found";
+    }
+
+  }
+
 }
