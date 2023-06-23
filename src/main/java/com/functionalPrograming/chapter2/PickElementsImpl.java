@@ -33,6 +33,7 @@ public class PickElementsImpl implements PickElements {
         .findFirst();
 
     System.out.println(String.format("A name starting with %s: %s", startingLetter, foundName.orElse("No Name Found")));
+    foundName.ifPresent(name -> System.out.println("Hello " +name));
 
     return foundName.orElse("No Name Found");
   }
