@@ -15,8 +15,7 @@ public class PickElementsImpl implements PickElements {
     return it -> it.startsWith(letter);
   }
 
-  final Function<String, Predicate<String>> startWithLetter =
-    (String letter) -> (String word) -> word.startsWith(letter);
+  final Function<String, Predicate<String>> startWithLetter = letter -> word -> word.startsWith(letter);
 
   @Override
   public List<String> startsWithXLetter(List<String> wordList, String startWith) {
