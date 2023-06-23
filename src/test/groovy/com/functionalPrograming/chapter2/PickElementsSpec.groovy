@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class PickElementsSpec extends Specification {
 
-  def ""() {
+  def "startsWithXLetter"() {
     given:
     PickElements service = new PickElementsImpl()
     and:
@@ -22,7 +22,26 @@ class PickElementsSpec extends Specification {
     ["Brian", "Nate", "Neal", "Raju", "Sara", "Scott"] | "N"        | ["Nate", "Neal"]
     ["Brian", "Jackie", "John", "Mike"]                | "N"        | []
     ["Kate", "Ken", "Nick", "Paula", "Zach"]           | "N"        | ["Nick"]
+  }
 
+  def ""() {
+    given:
+    PickElements service = new PickElementsImpl()
+    and:
+    List<String> nameList = _nameList
+    and:
+    String startingLetter = _startingLetter
+    and:
+    def response
+    when:
+    response = service.pickName(nameList, startingLetter)
+    then:
+    response == _response
+    where:
+    _nameList                                          | _startingLetter | _response
+    ["Brian", "Nate", "Neal", "Raju", "Sara", "Scott"] | "N"             | "Nate"
+    ["Brian", "Jackie", "John", "Mike"]                | "N"             | "No Name Found"
+    ["Kate", "Ken", "Nick", "Paula", "Zach"]           | "N"             | "Nick"
   }
 
 }
