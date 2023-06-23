@@ -17,6 +17,6 @@ class PrintListSpec extends Specification {
     response == _response
     where:
     _friendList                                        | _response
-    ["Brian", "Nate", "Neal", "Raju", "Sara", "Scott"] | "Brian, Nate, Neal, Raju, Sara, Scott"
+    ["Brian", "Nate", "Neal", "Raju", "Sara", "Scott"] | "BRIAN, NATE, NEAL, RAJU, SARA, SCOTT"
   }
 }
