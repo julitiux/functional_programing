@@ -9,8 +9,11 @@ public class PrintListImpl implements PrintList {
 
   @Override
   public void print(List<String> friendList) {
-    for (int i = 0; i < friendList.size(); i++)
+    for (int i = 0; i < friendList.size() - 1; i++)
       System.out.println(friendList.get(i) + ", ");
+
+    if (friendList.size() > 0)
+      System.out.println(friendList.get(friendList.size() - 1));
   }
 
 }
