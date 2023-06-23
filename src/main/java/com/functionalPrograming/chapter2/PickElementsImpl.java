@@ -24,7 +24,7 @@ public class PickElementsImpl implements PickElements {
   @Override
   public List<String> startsWithXLetter(List<String> wordList, String startWith) {
     return wordList.stream()
-      .filter(startWithPredicate(startWith))
+      .filter(startWithLetter.apply(startWith))
       .collect(Collectors.toList());
   }
 
