@@ -1,6 +1,7 @@
 package com.functionalPrograming.chapter2;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -26,23 +27,14 @@ public class PickElementsImpl implements PickElements {
 
   @Override
   public String pickName(List<String> nameList, String startingLetter) {
-    String foundName = null;
+    final Optional<String> foundName =
+      nameList.stream()
+        .filter(name -> name.startsWith(startingLetter))
+        .findFirst();
 
-    for (String name : nameList) {
-      if (name.startsWith(startingLetter)) {
-        foundName = name;
-        break;
-      }
-    }
+    System.out.println(String.format("A name starting with %s: %s", startingLetter, foundName.orElse("No Name Found")));
 
-    System.out.println(String.format("A name starting with %s: ", startingLetter));
-
-    if (foundName != null) {
-      return foundName;
-    } else {
-      return "No Name Found";
-    }
-
+    return foundName.orElse("No Name Found");
   }
 
 }
