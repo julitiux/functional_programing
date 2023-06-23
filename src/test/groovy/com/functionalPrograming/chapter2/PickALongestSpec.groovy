@@ -19,4 +19,20 @@ class PickALongestSpec extends Specification {
     _nameList                                          | _response
     ["Brian", "Nate", "Neal", "Raju", "Sara", "Scott"] | 26
   }
+
+  def""(){
+    given:
+    PickALongest service = new PickALongestImpl()
+    and:
+    List<String> nameList = _nameList
+    and:
+    def response
+    when:
+    response = service.pickALongName(nameList)
+    then:
+    response == _response
+    where:
+    _nameList                                          | _response
+    ["Brian", "Nate", "Neal", "Raju", "Sara", "Scott"] | "Brian"
+  }
 }
