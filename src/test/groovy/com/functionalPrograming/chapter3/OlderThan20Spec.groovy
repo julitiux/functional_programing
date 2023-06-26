@@ -15,4 +15,16 @@ class OlderThan20Spec extends Specification {
     response == personList.findAll { person -> person.age > 20 }
   }
 
+
+  def "people by age"() {
+    given:
+    OlderThan20 service = new OlderThan20Impl()
+    List<Person> personList = Arrays.asList(new Person("Greg", 35), new Person("Jhon", 20), new Person("Sara", 21), new Person("Jane", 21))
+    Map<Integer, List<Person>> response
+    when:
+    response = service.peopleByAge(personList)
+    then:
+    response == personList.groupBy { it.age }
+  }
+
 }
