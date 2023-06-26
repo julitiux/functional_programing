@@ -4,7 +4,7 @@ public class IterateStringImpl implements IterateString {
 
   @Override
   public void iterateString(String string) {
-
+    string.chars().forEach(System.out::println);
   }
 
 }
