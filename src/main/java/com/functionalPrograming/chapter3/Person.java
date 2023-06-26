@@ -22,6 +22,10 @@ public class Person {
     this.age = age;
   }
 
+  public int ageDifference(Person person){
+    return this.age - person.age;
+  }
+
   @Override
   public String toString() {
     return "Person{" +
