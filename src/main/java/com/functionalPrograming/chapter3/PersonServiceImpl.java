@@ -12,4 +12,9 @@ public class PersonServiceImpl implements PersonService {
       .collect(Collectors.toList());
   }
 
+  public static void printPeople(final String menssage, final List<Person> people) {
+    System.out.println(menssage);
+    people.forEach(System.out::println);
+  }
+
 }
