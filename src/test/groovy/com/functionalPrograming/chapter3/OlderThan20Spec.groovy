@@ -3,5 +3,16 @@ package com.functionalPrograming.chapter3
 import spock.lang.Specification
 
 class OlderThan20Spec extends Specification {
-  
+
+  def "find older than 20"() {
+    given:
+    OlderThan20 service = new OlderThan20Impl()
+    List<Person> personList = Arrays.asList(new Person("Greg", 35), new Person("Jhon", 20), new Person("Sara", 21), new Person("Jane", 21))
+    List<Person> response
+    when:
+    response = service.olderThan20(personList)
+    then:
+    response == personList.findAll { person -> person.age > 20 }
+  }
+
 }
