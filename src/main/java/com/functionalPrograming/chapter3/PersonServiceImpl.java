@@ -53,7 +53,7 @@ public class PersonServiceImpl implements PersonService {
   @Override
   public List<Person> acendingByAgeAndName(List<Person> personList) {
     return personList.stream()
-      .sorted(Comparator.comparing(byAge))
+      .sorted(Comparator.comparing(byAge).thenComparing(byName))
       .collect(Collectors.toList());
   }
 
