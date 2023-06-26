@@ -5,8 +5,8 @@ public class IterateStringImpl implements IterateString {
   @Override
   public void iterateString(String string) {
     string.chars()
-      .filter(it -> Character.isDigit(it))
-      .forEach(it -> printChar(it));
+      .filter(Character::isDigit)
+      .forEach(IterateStringImpl::printChar);
   }
 
   private static void printChar(int aChar) {
