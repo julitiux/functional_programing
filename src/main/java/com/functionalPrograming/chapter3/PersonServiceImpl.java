@@ -3,6 +3,7 @@ package com.functionalPrograming.chapter3;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class PersonServiceImpl implements PersonService {
@@ -45,6 +46,8 @@ public class PersonServiceImpl implements PersonService {
       .max(Person::ageDifference);
     return personOptional.orElse(null);
   }
+
+  final Function<Person, Integer> byAge = person -> person.getAge();
 
   @Override
   public List<Person> acendingByAgeAndName(List<Person> personList) {
