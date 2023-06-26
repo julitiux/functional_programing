@@ -5,4 +5,6 @@ import java.util.List;
 public interface PersonService {
   List<Person> ascendingAge(List<Person> personList);
   List<Person> descendingAge(List<Person> personList);
+
+  Person youngest(List<Person> personList);
 }
