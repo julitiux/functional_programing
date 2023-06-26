@@ -37,4 +37,15 @@ class PersonServiceSpec extends Specification {
     then:
     response == personList.min { it.getAge() }
   }
+
+  def "eldest"() {
+    given:
+    PersonService service = new PersonServiceImpl()
+    List<Person> personList = Arrays.asList(new Person("Greg", 35), new Person("Jhon", 20), new Person("Sara", 21), new Person("Jane", 21))
+    Person response
+    when:
+    response = service.eldest(personList)
+    then:
+    response == personList.max { it.getAge() }
+  }
 }
