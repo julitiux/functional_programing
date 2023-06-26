@@ -9,10 +9,10 @@ public class PersonServiceImpl implements PersonService {
   @Override
   public List<Person> ascendingAge(List<Person> personList) {
     List<Person> ascendingAge = personList.stream()
-      .sorted(Person::ageDifference)
+      .sorted((person1, person2) -> person2.ageDifference(person1))
       .collect(Collectors.toList());
 
-    printPeople("Sorted in ascending order by age", ascendingAge);
+    printPeople("Sorted in descending order by age", ascendingAge);
     return ascendingAge;
   }
 
