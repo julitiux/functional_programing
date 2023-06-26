@@ -48,6 +48,7 @@ public class PersonServiceImpl implements PersonService {
   }
 
   final Function<Person, Integer> byAge = person -> person.getAge();
+  final Function<Person, String> byName = person -> person.getName();
 
   @Override
   public List<Person> acendingByAgeAndName(List<Person> personList) {
