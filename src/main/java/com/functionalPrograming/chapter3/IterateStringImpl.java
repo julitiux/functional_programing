@@ -7,4 +7,8 @@ public class IterateStringImpl implements IterateString {
     string.chars().forEach(System.out::println);
   }
 
+  private static void printChar(int aChar) {
+    System.out.println((char) aChar);
+  }
+
 }
