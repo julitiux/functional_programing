@@ -48,4 +48,15 @@ class PersonServiceSpec extends Specification {
     then:
     response == personList.max { it.getAge() }
   }
+
+  def "ascending by age and name"() {
+    given:
+    PersonService service = new PersonServiceImpl()
+    List<Person> personList = Arrays.asList(new Person("Greg", 35), new Person("Jhon", 20), new Person("Sara", 21), new Person("Jane", 21))
+    List<Person> response
+    when:
+    response = service.acendingByAgeAndName(personList)
+    then:
+    response == personList.sort { person1, person2 -> person1.age <=> person2.age ?: person1.name <=> person2.name }
+  }
 }
