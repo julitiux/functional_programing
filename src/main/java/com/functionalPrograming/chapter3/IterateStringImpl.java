@@ -5,7 +5,7 @@ public class IterateStringImpl implements IterateString {
   @Override
   public void iterateString(String string) {
     string.chars()
-      .mapToObj( it -> Character.valueOf((char) it))
+      .mapToObj( it -> (char) it)
       .forEach(System.out::println);
   }
 
