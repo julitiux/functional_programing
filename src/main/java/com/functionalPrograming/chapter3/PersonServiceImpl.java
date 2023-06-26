@@ -39,5 +39,12 @@ public class PersonServiceImpl implements PersonService {
     return personOptional.orElse(null);
   }
 
+  @Override
+  public Person eldest(List<Person> personList) {
+    Optional<Person> personOptional = personList.stream()
+      .max(Person::ageDifference);
+    return personOptional.orElse(null);
+  }
+
 
 }
