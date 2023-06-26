@@ -2,6 +2,7 @@ package com.functionalPrograming.chapter3;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class PersonServiceImpl implements PersonService {
@@ -30,5 +31,13 @@ public class PersonServiceImpl implements PersonService {
     System.out.println(menssage);
     people.forEach(System.out::println);
   }
+
+  @Override
+  public Person youngest(List<Person> personList) {
+    Optional<Person> personOptional = personList.stream()
+      .min(Person::ageDifference);
+    return personOptional.orElse(null);
+  }
+
 
 }
