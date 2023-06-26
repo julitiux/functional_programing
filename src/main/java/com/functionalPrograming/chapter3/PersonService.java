@@ -8,4 +8,6 @@ public interface PersonService {
 
   Person youngest(List<Person> personList);
   Person eldest(List<Person> personList);
+
+  List<Person> acendingByAgeAndName(List<Person> personList);
 }
