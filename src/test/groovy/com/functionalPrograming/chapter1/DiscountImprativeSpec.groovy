@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class DiscountImprativeSpec extends Specification {
 
-  def ""() {
+  def "total of discounted prices"() {
     given:
     DiscountImprative service = new DiscountImprativeImpl()
     and:

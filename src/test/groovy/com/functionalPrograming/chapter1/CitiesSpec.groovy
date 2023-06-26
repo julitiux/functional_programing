@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class CitiesSpec extends Specification{
 
-  def "Given a name"(){
+  def "list all the cities"(){
     given:
     Cities cities = new CitiesImpl()
     and:

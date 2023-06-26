@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class PickALongestSpec extends Specification {
 
-  def ""() {
+  def "pick a name of list"() {
     given:
     PickALongest service = new PickALongestImpl()
     and:
@@ -20,7 +20,7 @@ class PickALongestSpec extends Specification {
     ["Brian", "Nate", "Neal", "Raju", "Sara", "Scott"] | 26
   }
 
-  def""(){
+  def"pick a long name"(){
     given:
     PickALongest service = new PickALongestImpl()
     and:

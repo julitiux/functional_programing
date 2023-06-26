@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class TransformSpec extends Specification {
 
-  def ""() {
+  def "transform elements list to uppercase"() {
     given:
     Transform service = new TransformImpl()
     and:

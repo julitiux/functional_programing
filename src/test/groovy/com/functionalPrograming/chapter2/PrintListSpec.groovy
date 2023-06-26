@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class PrintListSpec extends Specification {
 
-  def ""() {
+  def "print a list uppercase"() {
     given:
     PrintList service = new PrintListImpl()
     and:

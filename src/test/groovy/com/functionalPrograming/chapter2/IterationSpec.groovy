@@ -5,7 +5,7 @@ import spock.lang.Specification
 class IterationSpec extends Specification {
 
 
-  def ""() {
+  def "iteration"() {
     given:
     Iteration service = new IterationImpl()
     and:
