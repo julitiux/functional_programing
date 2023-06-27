@@ -27,4 +27,15 @@ class OlderThan20Spec extends Specification {
     response == personList.groupBy { it.age }
   }
 
+  def "name of people by age"() {
+    given:
+    OlderThan20 service = new OlderThan20Impl()
+    List<Person> personList = Arrays.asList(new Person("Greg", 35), new Person("Jhon", 20), new Person("Sara", 21), new Person("Jane", 21))
+    Map<Integer, List<String>> response
+    when:
+    response = service.nameOfPeopleByAge(personList)
+    then:
+    println response
+  }
+
 }
