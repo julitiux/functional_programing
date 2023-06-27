@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.toList;
+
 public class OlderThan20Impl implements OlderThan20 {
 
   @Override
@@ -17,6 +20,12 @@ public class OlderThan20Impl implements OlderThan20 {
   public Map<Integer, List<Person>> peopleByAge(List<Person> personList) {
     return personList.stream()
       .collect(Collectors.groupingBy(Person::getAge));
+  }
+
+  @Override
+  public Map<Integer, List<String>> nameOfPeopleByAge(List<Person> personList) {
+    return personList.stream()
+      .collect(Collectors.groupingBy(Person::getAge, mapping(Person::getName, toList())));
   }
 
 }
