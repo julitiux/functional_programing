@@ -6,4 +6,5 @@ import java.util.Map;
 public interface OlderThan20 {
   List<Person> olderThan20(List<Person> personList);
   Map<Integer, List<Person>> peopleByAge(List<Person> personList);
+  Map<Integer, List<String>> nameOfPeopleByAge(List<Person> personList);
 }
