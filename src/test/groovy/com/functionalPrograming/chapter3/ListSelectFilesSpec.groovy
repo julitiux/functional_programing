@@ -13,4 +13,14 @@ class ListSelectFilesSpec extends Specification {
     then:
     println response
   }
+
+  def "new directory stream"() {
+    given:
+    ListSelectFiles service = new ListSelectFilesImpl()
+    String[] response
+    when:
+    response = service.newDirectoryStream()
+    then:
+    println response.each { println it }
+  }
 }
