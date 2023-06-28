@@ -6,7 +6,7 @@ public class ListHiddenFilesImpl implements ListHiddenFiles {
 
   @Override
   public File[] listHiddenFiles() {
-    return new File(".").listFiles(file -> file.isHidden());
+    return new File(".").listFiles(File::isHidden);
   }
 
 }
