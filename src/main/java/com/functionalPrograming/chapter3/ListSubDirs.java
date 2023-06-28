@@ -5,4 +5,5 @@ import java.util.List;
 
 public interface ListSubDirs {
   List<File> listTheHardWay();
+  List<File> betterWay();
 }

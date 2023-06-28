@@ -12,6 +12,19 @@ class ListSubDirsSpec extends Specification {
     response = service.listTheHardWay()
     then:
     println response.each { println it }
+    response
+  }
+
+
+  def "better way"() {
+    given:
+    ListSubDirs service = new ListSubDirsImpl()
+    List<File> response
+    when:
+    response = service.betterWay()
+    then:
+    println response.each { println it }
+    response
   }
 
 }

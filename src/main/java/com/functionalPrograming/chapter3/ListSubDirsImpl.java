@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ListSubDirsImpl implements ListSubDirs {
 
@@ -22,6 +24,14 @@ public class ListSubDirsImpl implements ListSubDirs {
     }
 
     return files;
+  }
+
+  @Override
+  public List<File> betterWay() {
+    return Stream.of(new File(".").listFiles())
+      .flatMap(file -> file.listFiles() == null ?
+        Stream.of(file) : Stream.of(file.listFiles()))
+      .collect(Collectors.toList());
   }
 
 }
