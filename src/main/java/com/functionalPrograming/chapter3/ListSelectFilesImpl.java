@@ -11,10 +11,10 @@ public class ListSelectFilesImpl implements ListSelectFiles{
 
   @Override
   public String[] getfiles() {
-    return new File("user.dir").list(new java.io.FilenameFilter(){
+    return new File(".").list(new java.io.FilenameFilter(){
       @Override
       public boolean accept(File dir, String name) {
-        return name.endsWith("*.*");
+        return name.endsWith("gradle");
       }
     });
   }
@@ -22,7 +22,7 @@ public class ListSelectFilesImpl implements ListSelectFiles{
   @Override
   public DirectoryStream<Path> newDirectoryStream() throws IOException {
     return Files.newDirectoryStream(
-      Paths.get("."), path -> path.toString().endsWith("java")
+      Paths.get("."), path -> path.toString().endsWith("gradle")
     );
   }
 
