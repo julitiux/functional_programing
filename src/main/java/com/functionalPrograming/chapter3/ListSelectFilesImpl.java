@@ -1,6 +1,11 @@
 package com.functionalPrograming.chapter3;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class ListSelectFilesImpl implements ListSelectFiles{
 
@@ -12,6 +17,13 @@ public class ListSelectFilesImpl implements ListSelectFiles{
         return name.endsWith("*.*");
       }
     });
+  }
+
+  @Override
+  public DirectoryStream<Path> newDirectoryStream() throws IOException {
+    return Files.newDirectoryStream(
+      Paths.get("."), path -> path.toString().endsWith("java")
+    );
   }
 
 }
