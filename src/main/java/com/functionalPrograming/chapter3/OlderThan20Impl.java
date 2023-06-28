@@ -30,6 +30,8 @@ public class OlderThan20Impl implements OlderThan20 {
       .collect(Collectors.groupingBy(Person::getAge, mapping(Person::getName, toList())));
   }
 
+  Comparator<Person> byAge = Comparator.comparing(Person::getAge);
+
   @Override
   public Map<Character, Optional<Person>> odestPersonOfEachLetter(List<Person> personList) {
     return personList.stream()
