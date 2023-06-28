@@ -38,4 +38,15 @@ class OlderThan20Spec extends Specification {
     println response
   }
 
+  def "oldest person of each letter"() {
+    given:
+    OlderThan20 service = new OlderThan20Impl()
+    List<Person> personList = Arrays.asList(new Person("Greg", 35), new Person("Jhon", 20), new Person("Sara", 21), new Person("Jane", 21))
+    Map<Integer, Optional<Person>> response
+    when:
+    response = service.odestPersonOfEachLetter(personList)
+    then:
+    println response
+  }
+
 }
