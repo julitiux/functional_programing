@@ -1,4 +1,4 @@
-package com.functionalPrograming
+package com.functionalPrograming.chapter4
 
 import spock.lang.Specification
 
