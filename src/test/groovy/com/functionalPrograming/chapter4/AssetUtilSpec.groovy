@@ -15,4 +15,15 @@ class AssetUtilSpec extends Specification {
     response == 10000
   }
 
+  def "total bond values"() {
+    given:
+    AssetUtil service = new AssetUtilImpl();
+    List<Asset> assetList = [new Asset(Asset.AssetType.BOND, 1000), new Asset(Asset.AssetType.BOND, 2000), new Asset(Asset.AssetType.STOCK, 3000), new Asset(Asset.AssetType.STOCK, 4000)]
+    Integer response
+    when:
+    response = service.totalBondValues(assetList)
+    then:
+    response == 3000
+  }
+
 }
