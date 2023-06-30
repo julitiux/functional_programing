@@ -14,4 +14,9 @@ public class AssetUtilImpl implements AssetUtil {
     return assetList.stream().mapToInt(asset -> asset.getType() == Asset.AssetType.BOND ? asset.getValue() : 0).sum();
   }
 
+  @Override
+  public Integer totalStockValues(List<Asset> assetList) {
+    return assetList.stream().mapToInt(asset -> asset.getType() == Asset.AssetType.STOCK ? asset.getValue() : 0).sum();
+  }
+
 }
