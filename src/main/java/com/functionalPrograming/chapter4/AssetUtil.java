@@ -5,4 +5,5 @@ import java.util.List;
 public interface AssetUtil {
   Integer totalAssetValues(List<Asset> assetList);
   Integer totalBondValues(List<Asset> assetList);
+  Integer totalStockValues(List<Asset> assetList);
 }
