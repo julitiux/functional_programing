@@ -20,6 +20,7 @@ class AssetUtilSpec extends Specification {
     _response | _lambda
     10000     | (asset) -> true
     3000      | (asset) -> asset.getType() == Asset.AssetType.BOND
+    7000      | (asset) -> asset.getType() == Asset.AssetType.STOCK
   }
 
   def "total bond values"() {
