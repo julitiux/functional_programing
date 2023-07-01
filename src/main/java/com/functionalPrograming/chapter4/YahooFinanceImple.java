@@ -20,7 +20,5 @@ public class YahooFinanceImple implements YahooFinance {
     } catch (Exception e) {
       throw new RuntimeException();
     }
-
-    return null;
   }
 }
