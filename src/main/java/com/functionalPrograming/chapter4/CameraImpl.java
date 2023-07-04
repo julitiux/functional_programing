@@ -19,7 +19,7 @@ public class CameraImpl implements Camera {
   public void setFilters(Function<Color, Color>... filters) {
     filter = Stream.of(filters)
       .reduce((filter, next) -> filter.compose(next))
-      .orElse(color -> color);
+      .orElseGet(Function::identity);
   }
 
   public void Camera() {
