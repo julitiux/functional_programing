@@ -1,6 +1,6 @@
 package com.functionalPrograming.chapter4;
 
-public class SeaPlane extends Vehicle implements FastFly, Sail {
+public class SeaPlaneImpl extends Vehicle implements FastFly, Sail {
 
   private int altitude;
 
