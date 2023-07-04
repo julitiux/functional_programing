@@ -6,7 +6,7 @@ public class SeaPlaneImpl extends Vehicle implements FastFly, Sail {
 
   @Override
   public void cruise() {
-    System.out.println("SeaPlane::cruise currently cruise like: ");
+    System.out.print("SeaPlane::cruise currently cruise like: ");
     if (altitude > 0)
       FastFly.super.cruise();
     else
