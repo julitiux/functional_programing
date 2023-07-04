@@ -16,13 +16,13 @@ public class CameraImpl implements Camera {
   }
 
   @Override
-  public void setFilters(Function<Color, Color>... filters) {
+  public void setFilters(final Function<Color, Color>... filters) {
     filter = Stream.of(filters)
       .reduce((filter, next) -> filter.compose(next))
       .orElseGet(Function::identity);
   }
 
-  public void Camera() {
+  public CameraImpl() {
     setFilters();
   }
 
