@@ -9,6 +9,7 @@ class FileWriterExampleSpec extends Specification {
     FileWriterExample service = new FileWriterExampleImpl("peekaboo.txt")
     expect:
     service.writeStuff("peek-a-boo")
+    service.close()
   }
 
 }
