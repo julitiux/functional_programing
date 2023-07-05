@@ -3,7 +3,7 @@ package com.functionalPrograming.chapter5;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileWriterARMImpl implements FileWriterARM {
+public class FileWriterARMImpl implements AutoCloseable, FileWriterARM {
 
   private final FileWriter writer;
 
