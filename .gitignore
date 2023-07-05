@@ -32,3 +32,6 @@ build/*
 
 # vim
 *.swp
+
+#files
+peekaboo.txt
