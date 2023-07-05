@@ -19,4 +19,9 @@ public class FileWriterExampleImpl implements FileWriterExample {
     writer.close();
   }
 
+  @Override
+  public void close() throws IOException {
+    writer.close();
+  }
+
 }

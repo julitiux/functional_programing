@@ -6,5 +6,6 @@ public interface FileWriterExample {
 
   void writeStuff(final String message) throws IOException;
   void finaliza() throws IOException;
+  void close() throws IOException;
 
 }
