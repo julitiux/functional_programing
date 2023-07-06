@@ -1,7 +1,6 @@
 package com.functionalPrograming.chapter5;
 
 
-
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -22,11 +21,11 @@ public class FileWriterEAMImpl implements FileWriterEAM {
     writer.write(message);
   }
 
-  public static void use(final String fileName, final UseInstance<FileWriterEAM, IOException> block) throws IOException{
+  public static void use(final String fileName, final UseInstance<FileWriterEAM, IOException> block) throws IOException {
     final FileWriterEAMImpl writerEAM = new FileWriterEAMImpl(fileName);
     try {
       block.accept(writerEAM);
-    }finally {
+    } finally {
       writerEAM.close();
     }
   }
