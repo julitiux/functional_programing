@@ -1,8 +1,8 @@
 package com.functionalPrograming.chapter6;
 
-public class HeavyImpl {
+public class Heavy {
 
-  public HeavyImpl() {
+  public Heavy() {
     System.out.println("Heavy created");
   }
 

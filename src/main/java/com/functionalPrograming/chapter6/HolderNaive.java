@@ -2,15 +2,15 @@ package com.functionalPrograming.chapter6;
 
 public class HolderNaive {
 
-  private HeavyImpl heavy;
+  private Heavy heavy;
 
   public HolderNaive() {
     System.out.println("Holder created");
   }
 
-  public HeavyImpl getHeavy() {
+  public Heavy getHeavy() {
     if (heavy == null) {
-      heavy = new HeavyImpl();
+      heavy = new Heavy();
     }
     return heavy;
   }
