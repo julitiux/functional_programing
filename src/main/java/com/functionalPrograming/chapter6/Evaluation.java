@@ -1,5 +1,7 @@
 package com.functionalPrograming.chapter6;
 
+import java.util.function.Supplier;
+
 public class Evaluation {
 
   public static boolean evaluate(final int value) {
@@ -16,6 +18,11 @@ public class Evaluation {
   public static void eagerEvaluator(final boolean input1, final boolean input2) {
     System.out.println("eagerEvaluaor called... ");
     System.out.println("accept?: " + (input1 && input2));
+  }
+
+  public static void lazyEvaluator(final Supplier<Boolean> input1, final Supplier<Boolean> input2) {
+    System.out.println("lazyEvaluaor called... ");
+    System.out.println("accept?: " + (input1.get() && input2.get()));
   }
 
 }
