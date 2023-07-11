@@ -6,17 +6,26 @@ import spock.lang.Specification
 class FactorialSpec extends Specification {
 
   @Shared
-    instance = new Factorial()
+    factorialInstance = new Factorial()
 
-  def "factorialRec"() {
+  @Shared
+    bigIntegerInstance = new BigFactorial()
+
+
+  def "factorialInstance.factorialRec"() {
     expect:
-    println instance.factorialRec(10)
+    println factorialInstance.factorialRec(10)
   }
 
 
-  def "factorialRec"() {
+  def "factorialInstance.factorialTailRec"() {
     expect:
-    println instance.factorialTailRec(1, 200010).invoke()
+    println factorialInstance.factorialTailRec(1, 200010).invoke()
+  }
+
+  def "bigIntegerInstance.factorial"() {
+    expect:
+    println bigIntegerInstance.factorial(new BigInteger("20000"))
   }
 
 }
