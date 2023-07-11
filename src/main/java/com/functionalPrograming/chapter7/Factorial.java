@@ -1,7 +1,7 @@
 package com.functionalPrograming.chapter7;
 
-import static fpij.TailCalls.call;
-import static fpij.TailCalls.done;
+import static com.functionalPrograming.chapter7.TailCalls.call;
+import static com.functionalPrograming.chapter7.TailCalls.done;
 
 
 public class Factorial {
