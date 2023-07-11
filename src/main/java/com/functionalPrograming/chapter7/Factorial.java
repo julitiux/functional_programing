@@ -6,7 +6,7 @@ public class Factorial {
     if (number == 1)
       return number;
     else
-      return number + factorialRec(number - 1);
+      return number * factorialRec(number - 1);
   }
 
 }
