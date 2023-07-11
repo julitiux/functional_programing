@@ -10,7 +10,13 @@ class FactorialSpec extends Specification {
 
   def "factorialRec"() {
     expect:
-    println instance.factorialRec(20000)
+    println instance.factorialRec(10)
+  }
+
+
+  def "factorialRec"() {
+    expect:
+    println instance.factorialTailRec(1, 200010).invoke()
   }
 
 }
