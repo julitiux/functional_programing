@@ -7,7 +7,7 @@ public interface TailCall<T> {
 
   TailCall<T> apply();
 
-  default boolean isComlete() {
+  default boolean isComplete() {
     return false;
   }
 
