@@ -21,4 +21,9 @@ public class Factorial {
       return call(() -> factorialTailRec(factorial * number, number - 1));
   }
 
+
+  public static int factorial(final int number){
+    return factorialTailRec(1, number).invoke();
+  }
+
 }
