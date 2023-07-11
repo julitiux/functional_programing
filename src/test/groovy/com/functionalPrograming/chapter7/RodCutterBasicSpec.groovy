@@ -17,6 +17,6 @@ class RodCutterBasicSpec extends Specification {
   @Ignore
   def "intance.maxProfit 22"() {
     expect:
-    intance.maxProfit(22)
+    intance.maxProfit2(22)
   }
 }
