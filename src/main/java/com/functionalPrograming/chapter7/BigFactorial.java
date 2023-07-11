@@ -26,4 +26,8 @@ public class BigFactorial {
       return call(() -> factorialTailRec(multiply(factorial, number), decrement(number)));
   }
 
+  public static BigInteger factorial(final BigInteger number) {
+    return factorialTailRec(BigInteger.ONE, number).invoke();
+  }
+
 }
