@@ -15,5 +15,12 @@ public class StockInfo {
   public String toString() {
     return String.format("ticker: %s price %g ", ticker, price);
   }
-  
+
+  public String getTicker() {
+    return ticker;
+  }
+
+  public BigDecimal getPrice() {
+    return price;
+  }
 }
